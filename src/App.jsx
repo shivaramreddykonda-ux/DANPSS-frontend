@@ -23,7 +23,13 @@ import {
 } from 'lucide-react';
 import './App.css';
 
-const API = `${import.meta.env.VITE_API_URL || 'http://localhost:8080'}/api`;
+const RAW_API =
+  import.meta.env.VITE_API_BASE_URL ||
+  import.meta.env.VITE_API_URL ||
+  'http://localhost:8080/api';
+const API = RAW_API.replace(/\/+$/, '').endsWith('/api')
+  ? RAW_API.replace(/\/+$/, '')
+  : `${RAW_API.replace(/\/+$/, '')}/api`;
 
 const emptyJobForm = {
   title: '',

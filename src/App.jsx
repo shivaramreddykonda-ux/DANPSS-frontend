@@ -21,7 +21,7 @@ import {
   AlertCircle,
   Clock3
 } from 'lucide-react';
-import './App.css';
+import './app.css';
 
 const RAW_API =
   import.meta.env.VITE_API_BASE_URL ||
